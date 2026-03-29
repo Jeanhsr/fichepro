@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useSession, signOut } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import Navbar from '../components/Navbar'
+import Onboarding from '../components/Onboarding'
 import styles from '../styles/Dashboard.module.css'
 import { exportToPDF } from '../utils/exportPDF'
 
@@ -587,6 +588,7 @@ export default function Dashboard() {
   const [boutiqueUrl, setBoutiqueUrl] = useState('')
   const [analysingUrl, setAnalysingUrl] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [showOnboarding, setShowOnboarding] = useState(false)
   const [result, setResult] = useState<FicheResult | null>(null)
   const [error, setError] = useState('')
   const [historique, setHistorique] = useState<HistoriqueItem[]>([])
@@ -689,6 +691,7 @@ export default function Dashboard() {
     <>
       <Head><title>Dashboard — FichePro</title></Head>
       <Navbar />
+      {showOnboarding && <Onboarding onClose={() => setShowOnboarding(false)} />}
       <div className={styles.page}>
         <div className={styles.layout}>
 
