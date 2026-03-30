@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import Onboarding from '../components/Onboarding'
 import styles from '../styles/Dashboard.module.css'
 import { exportToPDF } from '../utils/exportPDF'
+import ExportPlateforme from '../components/ExportPlateforme'
 
 interface Avis {
   nom: string
@@ -498,6 +499,7 @@ function ProductPreview({ result, productName, price, pricePromo, promoPercent, 
       <button className={`${styles.btnCopy} ${copied ? styles.btnCopied : ''}`} onClick={copyAll}>
         {copied ? '✅ Copié !' : '📋 Copier toute la fiche'}
       </button>
+      <ExportPlateforme result={currentFiche} productName={productName} price={price} />
       <button
         className={styles.btnPDF}
         onClick={() => exportToPDF(currentFiche, productName, price, pricePromo, promoPercent)}

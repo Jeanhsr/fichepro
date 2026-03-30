@@ -1,0 +1,60 @@
+.wrap {
+  padding: 20px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.btn {
+  background: var(--gray2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.btn:hover {
+  border-color: var(--p-color, #ff5c00);
+  background: rgba(255,255,255,0.03);
+  transform: translateY(-2px);
+}
+.btnCopied {
+  border-color: var(--success) !important;
+  background: rgba(0,200,122,0.05) !important;
+}
+
+.emoji { font-size: 20px; }
+
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.desc {
+  font-size: 9px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
