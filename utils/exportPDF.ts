@@ -269,7 +269,7 @@ export function exportToPDF(result: FicheResult, productName: string, price: str
 
     doc.setTextColor(255, 184, 0)
     doc.setFontSize(10)
-    doc.text('★'.repeat(avis.note) + '☆'.repeat(5 - avis.note), margin + 4, y + 10)
+    doc.text('★★★★★'.slice(0, avis.note), margin + 4, y + 10)
 
     doc.setTextColor(...gray)
     doc.setFontSize(8)
@@ -293,7 +293,7 @@ export function exportToPDF(result: FicheResult, productName: string, price: str
     doc.setTextColor(...gray)
     doc.setFontSize(7)
     doc.setFont('helvetica', 'normal')
-    doc.text('Généré par FichePro — fichepro.fr', margin, pageH - 4)
+    doc.text('Généré par FichePro — fichepro.vercel.app', margin, pageH - 4)
     doc.text(`Page ${i} / ${totalPages}`, pageW - margin - 15, pageH - 4)
   }
 
